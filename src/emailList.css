@@ -1,0 +1,62 @@
+.emailList {
+    flex: 1;
+    overflow: scroll;
+}
+
+.emailList-list {
+    padding-bottom: 25%;
+}
+
+.emailList::-webkit-scrollbar {
+    display: none;
+}
+
+.emailList-settings {
+    position: sticky;
+    top: 0;
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px solid whitesmoke;
+    background-color: white;
+    z-index: 999;
+    padding-right: 10px;
+}
+
+.emailList-settings-left>.MuiSvgIcon-root {
+    color: grey;
+}
+
+.emailList-sections {
+    position: sticky;
+    top: 0;
+    display: flex;
+    border-bottom: 1px solid whitesmoke;
+    background-color: white;
+    z-index: 999;
+}
+
+.section {
+    display: flex;
+    align-items: center;
+    border-bottom-width: 2px;
+    min-width: 200px;
+    padding: 15px;
+    cursor: pointer;
+    color: grey;
+    border-width: 0 !important;
+}
+
+.section--selected {
+    background-color: whitesmoke;
+    border-width: 3px !important;
+}
+
+.section:hover {
+    background-color: whitesmoke;
+    border-width: 3px !important;
+}
+
+.section>h4 {
+    font-size: 14px;
+    margin-left: 15px;
+}
