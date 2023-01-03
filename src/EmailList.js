@@ -68,7 +68,7 @@ const EmailList = () => {
             title={to}
             subject={subject}
             description={message}
-            time={new Date(timestamp?.seconds * 1000).toUTCString()}
+            time={new Date(timestamp?.seconds * 1000).toLocaleString()}
           />
         ))}
         <EmailRow

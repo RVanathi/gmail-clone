@@ -17,11 +17,9 @@ function App() {
   const sendMessageIsOpen = useSelector(selectSendMessageIsOpen);
   const user = useSelector(selectUser);
   const dispatch = useDispatch();
-
   useEffect(() => {
     auth.onAuthStateChanged((user) => {
       if (user) {
-        //the user is logged in
         dispatch(
           login({
             displayName: user.displayName,
@@ -31,7 +29,8 @@ function App() {
         );
       }
     });
-  }, []);
+  }, [dispatch]);
+
   return (
     <Router>
       {!user ? (

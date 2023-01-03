@@ -9,11 +9,18 @@ import {
   Tune,
 } from "@mui/icons-material";
 import MenuIcon from "@mui/icons-material/Menu";
-import { useSelector } from "react-redux";
-import { selectUser } from "./features/userSlice";
+import { useDispatch, useSelector } from "react-redux";
+import { logout, selectUser } from "./features/userSlice";
+import { auth } from "./firebase";
 
 function Header() {
   const user = useSelector(selectUser);
+  const dispatch = useDispatch();
+  const signOut = () => {
+    auth.signOut().then(() => {
+      dispatch(logout());
+    });
+  };
   return (
     <div className="header">
       <div className="header-left">
@@ -40,7 +47,9 @@ function Header() {
         <IconButton>
           <Notifications />
         </IconButton>
-        <Avatar src={user?.photoUrl} />
+        <IconButton onClick={signOut}>
+          <Avatar src={user?.photoUrl} />
+        </IconButton>
       </div>
     </div>
   );
